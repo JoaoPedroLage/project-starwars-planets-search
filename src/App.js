@@ -1,12 +1,17 @@
-import React from 'react';
-import Context from './context/Context';
 import './App.css';
+import React from 'react';
+import Provider from './context/SWProvider';
+import Table from './components/DataTable';
+import Header from './components/Header';
 
 function App() {
   return (
-    <Context.Provider>
-      <span>Hello, App!</span>
-    </Context.Provider>
+    <div className="App">
+      <Provider>
+        <Header />
+        <Table />
+      </Provider>
+    </div>
   );
 }
 
