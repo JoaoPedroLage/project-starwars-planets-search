@@ -1,17 +1,16 @@
-import React from 'react';
-// import React, { useContext } from 'react';
-// import Context from '../context/SWContext';
-// import MountAPI from '../hooks/MountAPI';
-import response from '../testData';
+// import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../context/SWContext';
+import MountAPI from '../hooks/MountAPI';
+// import response from '../testData';
 
 export default function Table() {
-  // const {
-  //   data,
-  //   requestStarWarsAPI,
-  // } = useContext(Context);
-  // const timerequestAPI = 5000;
+  const {
+    data,
+    requestStarWarsAPI,
+  } = useContext(Context);
 
-  // MountAPI(requestStarWarsAPI, timerequestAPI);
+  MountAPI(requestStarWarsAPI);
 
   return (
     <table>
@@ -33,8 +32,9 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {/* {data.map((planet, index) => ( */}
-        {response.results.map((planet, index) => (
+        {console.log(data)}
+        {data.map((planet, index) => (
+        // {response.results.map((planet, index) => (
           <tr key={ index }>
             <td>{planet.name}</td>
             <td>{planet.rotation_period}</td>

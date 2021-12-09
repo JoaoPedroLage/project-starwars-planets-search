@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
 
-function MountAPI(StarWarsAPI, interval) {
+export default function MountAPI(StarWarsAPI) {
   useEffect(() => {
     StarWarsAPI();
-
-    const intervalId = setInterval(StarWarsAPI, interval);
-    return () => clearInterval(intervalId);
   },
-  [StarWarsAPI, interval]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  []);
 }
-
-export default MountAPI;

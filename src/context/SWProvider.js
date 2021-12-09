@@ -30,5 +30,5 @@ export default function SWProvider({ children }) {
 }
 
 SWProvider.propTypes = {
-  children: PropTypes.array,
-}.isRequired;
+  children: PropTypes.node.isRequired,
+};
