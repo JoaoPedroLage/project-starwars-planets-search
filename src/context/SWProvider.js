@@ -6,23 +6,29 @@ import Context from './SWContext';
 import getCurrentPlanetsData from '../services/StarWarsAPi';
 
 export default function SWProvider({ children }) {
-  const [state, setState] = useState({
-    data: [],
-  });
+  const [allPlanets, setAllPlanets] = useState([]);
+  const [filteredPlanets, setFilteredPlanets] = useState([]);
+  const [filterByName, setFilterByName] = useState({});
 
   const requestStarWarsAPI = async () => {
     const response = await getCurrentPlanetsData();
     const { results } = response;
 
-    setState((prevState) => ({
-      ...prevState,
-      data: results,
-    }));
+    setAllPlanets(results);
+  };
+
+  const contextValue = {
+    allPlanets,
+    filteredPlanets,
+    setFilteredPlanets,
+    filterByName,
+    setFilterByName,
+    requestStarWarsAPI,
   };
 
   return (
     <Context.Provider
-      value={ { ...state, requestStarWarsAPI } }
+      value={ contextValue }
     >
       { children }
     </Context.Provider>
