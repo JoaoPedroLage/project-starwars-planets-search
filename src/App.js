@@ -4,6 +4,7 @@ import Provider from './context/SWProvider';
 import Table from './components/DataTable';
 import Header from './components/Header';
 import SearchInput from './components/SearchInput';
+import EntryFilters from './components/EntryFilters';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Provider>
         <Header />
         <SearchInput />
+        <EntryFilters />
         <Table />
       </Provider>
     </div>

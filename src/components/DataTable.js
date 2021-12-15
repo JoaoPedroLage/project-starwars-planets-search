@@ -1,8 +1,6 @@
-// import React from 'react';
 import React, { useContext } from 'react';
 import Context from '../context/SWContext';
 import MountAPI from '../hooks/MountAPI';
-// import response from '../testData';
 
 export default function Table() {
   const {
@@ -55,8 +53,6 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {/* {console.log(data)} */}
-        {/* {response.results.map((planet, index) => ( */}
         {filterData()}
       </tbody>
     </table>

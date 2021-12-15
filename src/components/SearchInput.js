@@ -22,12 +22,8 @@ export default function SearchInput() {
     console.log(filterPlanets);
   }
 
-  function handleSubmit() {
-
-  }
-
   return (
-    <form onSubmit={ handleSubmit }>
+    <form>
       <label htmlFor="name-filter">
         <input
           data-testid="name-filter"

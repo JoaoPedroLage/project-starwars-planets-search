@@ -9,6 +9,7 @@ export default function SWProvider({ children }) {
   const [allPlanets, setAllPlanets] = useState([]);
   const [filteredPlanets, setFilteredPlanets] = useState([]);
   const [filterByName, setFilterByName] = useState({});
+  const [filterByNumericValues, setFilterByNumericValues] = useState([{}]);
 
   const requestStarWarsAPI = async () => {
     const response = await getCurrentPlanetsData();
