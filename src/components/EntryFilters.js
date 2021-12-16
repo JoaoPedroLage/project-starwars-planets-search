@@ -2,9 +2,17 @@ import React, { useContext, useState } from 'react';
 import Context from '../context/SWContext';
 
 export default function EntryFilters() {
+  const arrayColums = [
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water'];
+
   const {
     setFilteredPlanets,
     setFilterByNumericValues,
+    filterByNumericValues,
     planetsData,
   } = useContext(Context);
 
@@ -19,7 +27,7 @@ export default function EntryFilters() {
   }
 
   function onFilterByNum() {
-    setFilterByNumericValues({ column, comparison, value });
+    setFilterByNumericValues([{ column, comparison, value }]);
 
     if (comparison === 'maior que') {
       const filterPlanets = planetsData.filter(
@@ -54,11 +62,15 @@ export default function EntryFilters() {
         name="column"
         onChange={ handleChange }
       >
-        <option>population</option>
-        <option>orbital_period</option>
-        <option>diameter</option>
-        <option>rotation_period</option>
-        <option>surface_water</option>
+        {arrayColums.filter(
+          (columns) => (
+            columns !== filterByNumericValues[filterByNumericValues.length - 1].column
+          ),
+        ).map((option, index) => (
+          <option key={ index }>
+            {option}
+          </option>
+        ))}
       </select>
       <select
         data-testid="comparison-filter"
