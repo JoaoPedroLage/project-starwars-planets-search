@@ -18,8 +18,6 @@ export default function SearchInput() {
     );
 
     setFilteredPlanets(filterPlanets);
-
-    console.log(filterPlanets);
   }
 
   return (

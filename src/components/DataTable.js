@@ -35,19 +35,19 @@ export default function Table() {
     <table>
       <thead>
         <tr>
-          <th role="columnheader">Name</th>
-          <th role="columnheader">Rotation Period</th>
-          <th role="columnheader">Orbital Period</th>
-          <th role="columnheader">Diameter</th>
-          <th role="columnheader">Climate</th>
-          <th role="columnheader">Gravity</th>
-          <th role="columnheader">Terrain</th>
-          <th role="columnheader">Surface Water</th>
-          <th role="columnheader">Population</th>
-          <th role="columnheader">Films</th>
-          <th role="columnheader">Created</th>
-          <th role="columnheader">Edited</th>
-          <th role="columnheader">URL</th>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Orbital Period</th>
+          <th>Diameter</th>
+          <th>Climate</th>
+          <th>Gravity</th>
+          <th>Terrain</th>
+          <th>Surface Water</th>
+          <th>Population</th>
+          <th>Films</th>
+          <th>Created</th>
+          <th>Edited</th>
+          <th>URL</th>
         </tr>
       </thead>
       <tbody>
