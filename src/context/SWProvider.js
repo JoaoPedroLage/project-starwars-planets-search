@@ -8,8 +8,12 @@ import getCurrentPlanetsData from '../services/StarWarsAPi';
 export default function SWProvider({ children }) {
   const [allPlanets, setAllPlanets] = useState([]);
   const [filteredPlanets, setFilteredPlanets] = useState([]);
+  const planetsData = filteredPlanets.length === 0 ? allPlanets : filteredPlanets;
+
   const [filterByName, setFilterByName] = useState({});
-  const [filterByNumericValues, setFilterByNumericValues] = useState([{}]);
+  const [filterByNumericValues, setFilterByNumericValues] = useState({
+    column: 'population', comparison: 'maior que', value: '0',
+  });
 
   const requestStarWarsAPI = async () => {
     const response = await getCurrentPlanetsData();
@@ -19,11 +23,14 @@ export default function SWProvider({ children }) {
   };
 
   const contextValue = {
+    planetsData,
     allPlanets,
     filteredPlanets,
     setFilteredPlanets,
     filterByName,
     setFilterByName,
+    filterByNumericValues,
+    setFilterByNumericValues,
     requestStarWarsAPI,
   };
 

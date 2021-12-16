@@ -4,15 +4,13 @@ import MountAPI from '../hooks/MountAPI';
 
 export default function Table() {
   const {
-    allPlanets,
-    filteredPlanets,
+    planetsData,
     requestStarWarsAPI,
   } = useContext(Context);
 
   MountAPI(requestStarWarsAPI);
 
   function filterData() {
-    const planetsData = filteredPlanets.length === 0 ? allPlanets : filteredPlanets;
     return (
       planetsData.map((planet, index) => (
         <tr key={ index }>
